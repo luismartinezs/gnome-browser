@@ -1,14 +1,725 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* VARIABLE DECLARATIONS AND GENERAL STYLES */
+
+:root {
+    --primary: #ff5722;
+    --primary-light: #ff8a50;
+    --primary-dark: #c41c00;
+    --secondary: #ffa000;
+    --secondary-light: #ffd149;
+    --secondary-xlight: #fff0c3;
+    --secondary-dark: #c67100;
+    --info: #9e9e9e;
+    --info-light: #cfcfcf;
+    --info-dark: #707070;
+    --text-color: rgb(20, 20, 20);
+    --h-font: 'Roboto', sans-serif;
+    --default-font: 'Open Sans', sans-serif;
+    --metalworker-clr: rgb(139, 139, 139);
+    --woodcarver-clr: rgb(121, 77, 70);
+    --stonecarver-clr: rgb(206, 173, 166);
+    --tinker-clr: rgb(212, 122, 86);
+    --tailor-clr: rgb(78, 143, 78);
+    --potter-clr: rgb(216, 97, 163);
+    --brewer-clr: rgb(219, 177, 99);
+    --medic-clr: rgb(230, 230, 230);
+    --prospector-clr: rgb(97, 216, 123);
+    --gemcutter-clr: rgb(42, 209, 231);
+    --mason-clr: rgb(78, 55, 20);
+    --cook-clr: rgb(233, 129, 81);
+    --baker-clr: rgb(163, 115, 44);
+    --miner-clr: rgb(89, 108, 129);
+    --carpenter-clr: rgb(114, 70, 62);
+    --farmer-clr: rgb(139, 196, 85);
+    --tax-inspector-clr: rgb(37, 49, 34);
+    --smelter-clr: rgb(128, 35, 32);
+    --butcher-clr: rgb(189, 44, 44);
+    --sculptor-clr: rgb(137, 90, 190);
+    --blacksmith-clr: rgb(88, 43, 43);
+    --mechanic-clr: rgb(71, 62, 67);
+    --leatherworker-clr: rgb(134, 102, 87);
+    --marble-carver-clr: rgb(197, 197, 197);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: var(--default-font);
+    color: var(--text-color)
+}
+
+h1 {
+    font-family: var(--h-font);
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+p {
+    font-family: var(--default-font);
+}
+
+/* HELPER CLASSES */
+
+.d-flex {
+    display: flex;
+}
+
+.d-col {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: start;
+}
+
+.align-end {
+    align-items: end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-start {
+    justify-content: start
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    border-radius: 0.2rem;
+    border: none;
+}
+
+.btn-wide {
+    width: 90%;
+    height: 3rem;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    background-color: var(--secondary-dark);
+    border: 2px solid white;
+}
+
+.btn-none {
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
+    font-size: inherit;
+}
+
+.btn-none:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.separator {
+    font-size: 1rem;
+}
+
+/* PROFESSIONS STYLES */
+
+.metalworker {
+    background-color: var(--metalworker-clr);
+    color: white;
+}
+
+.woodcarver {
+    background-color: var(--woodcarver-clr);
+    color: white;
+}
+
+.stonecarver {
+    background-color: var(--stonecarver-clr);
+    color: black;
+}
+
+.tinker {
+    background-color: var(--tinker-clr);
+    color: white;
+}
+
+.tailor {
+    background-color: var(--tailor-clr);
+    color: white;
+}
+
+.potter {
+    background-color: var(--potter-clr);
+    color: white;
+}
+
+.brewer {
+    background-color: var(--brewer-clr);
+    color: black;
+}
+
+.medic {
+    background-color: var(--medic-clr);
+    color: black;
+}
+
+.prospector {
+    background-color: var(--prospector-clr);
+    color: black;
+}
+
+.gemcutter {
+    background-color: var(--gemcutter-clr);
+    color: black;
+}
+
+.mason {
+    background-color: var(--mason-clr);
+    color: white;
+}
+
+.cook {
+    background-color: var(--cook-clr);
+    color: black;
+}
+
+.baker {
+    background-color: var(--baker-clr);
+    color: white;
+}
+
+.miner {
+    background-color: var(--miner-clr);
+    color: white;
+}
+
+.carpenter {
+    background-color: var(--carpenter-clr);
+    color: white;
+}
+
+.farmer {
+    background-color: var(--farmer-clr);
+    color: black;
+}
+
+.tax-inspector {
+    background-color: var(--tax-inspector-clr);
+    color: white;
+}
+
+.smelter {
+    background-color: var(--smelter-clr);
+    color: white;
+}
+
+.butcher {
+    background-color: var(--butcher-clr);
+    color: white;
+}
+
+.sculptor {
+    background-color: var(--sculptor-clr);
+    color: white;
+}
+
+.blacksmith {
+    background-color: var(--blacksmith-clr);
+    color: white;
+}
+
+.mechanic {
+    background-color: var(--mechanic-clr);
+    color: white;
+}
+
+.leatherworker {
+    background-color: var(--leatherworker-clr);
+    color: white;
+}
+
+.marble-carver {
+    background-color: var(--marble-carver-clr);
+    color: black;
+}
+
+
+/****** COMPONENTS STYLES *******/
+
+/* BASIC SEARCH */
+
+.searchContainer {
+    background-color: var(--info);
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: 3rem;
+}
+
+#basicSearchInputContainer {
+    margin-right: 1rem;
+}
+
+#basicSearchInput {
+    width: auto;
+    height: 2.8rem;
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0.1rem;
+    border-radius: 0.2rem;
+    border: none;
+}
+
+.basicSearchCue {
+    font-size: 0.8rem;
+    margin: 0;
+    color: white;
+    font-weight: 400;
+}
+
+#basicSearchBtn {
+    color: white;
+    background-color: var(--secondary);
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+#basicSearchBtn:hover {
+    background-color: var(--secondary-dark);
+}
+
+/* ADV SEARCH TOGGLER */
+
+#toggleSearchBtn {
+    position: relative;
+    top: 1.5rem;
+    width: 15rem;
+    background-color: var(--info);
+    padding-bottom: 0.3rem;
+    border-radius: 50px 50px 158px 151px / 25px 25px 120px 113px;
+}
+
+/* ADV SEARCH */
+
+#advSearch-container {
+    margin-top: 1rem;
+}
+
+.advSearch-h {
+    font-size: 1.3rem;
+}
+
+.advSearch-professions span {
+    display: inline-block;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    padding: 0 0.2rem 0 0.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.advSearch-professions span:hover {
+    border: 2px solid yellow;
+}
+
+.professionBtn {
+    padding: 0;
+    margin: 0;
+}
+
+.professionBtn:hover {
+    background-color: transparent;
+    border: none;
+}
+
+#advSearch-age-container {
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    width: 4rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    margin: 0 0.5 0 0.5;
+    border-radius: 0.2rem;
+    border: none;
+}
+
+.btn-advSearch {
+    display: inline-block;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: var(--h-font);
+    margin-bottom: 0.5rem;
+}
+
+.btn-advSearch:hover {
+    border: none;
+    color: white;
+}
+
+#btn-advSearch-search {
+    background-color: var(--primary);
+}
+
+#btn-advSearch-search:hover {
+    background-color: var(--primary-dark);
+}
+
+#btn-advSearch-reset {
+    background-color: var(--info-light);
+}
+
+#btn-advSearch-reset:hover {
+    background-color: var(--info-dark);
+}
+
+/* SURPRISE ME BTN */
+
+#surpirseMe-btn {
+    font-size: 1.3rem;
+    background-color: var(--primary);
+    max-width: 440px;
+    text-transform: uppercase;
+    font-family: var(--h-font);
+}
+
+#surpirseMe-btn:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+/* LIST */
+
+#listContainer {
+    margin: 1.5rem 1rem 1rem 1rem;
+}
+
+/* LIST ITEM */
+
+.listItemWrapper {
+    background-color: var(--secondary-xlight);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 450px;
+    width: 95%;
+    border: 2px solid var(--secondary-light);
+}
+
+.listItemContainer {
+    padding: 0.2rem 0.4rem 0.4rem 0.4rem;
+}
+
+.profile-img-wrapper {
+    min-width: 4rem;
+    width: 4rem;
+    height: 4rem;
+    min-height: 4rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 0.2rem 0.5rem 0 0;
+}
+
+.profile-img {
+    width: 100%;
+    min-height: 100%;
+}
+
+.profile-info-container {
+    margin-right: 0.5rem;
+}
+
+.name-container {
+    margin-bottom: 0.2rem;
+}
+
+.firstName {
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.lastName {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.professions {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.professions span {
+    display: inline-block;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem 0 0.2rem;
+    margin-left: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+.seeDetailBtnContainer {
+    align-self: center;
+    margin-right: 0.3rem;
+    margin-left: auto;
+}
+
+.seeDetailBtn {
+    background-color: var(--secondary);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+}
+
+.btn-text {
+    font-size: 2.2rem;
+    position: relative;
+    left: 0.05rem;
+    bottom: 0.05rem;
+}
+
+/* MORE BTN */
+
+#moreBtn-wrapper {
+    margin-bottom: 1rem;
+}
+
+#moreBtn {
+    font-size: 1.3rem;
+    background-color: var(--info);
+    max-width: 440px;
+    text-transform: uppercase;
+    font-family: var(--h-font);
+}
+
+#moreBtn:hover {
+    background-color: var(--info-dark);
+    color: white;
+}
+
+/* UP BTN */
+
+#upBtn-wrapper {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+#upBtn {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    color: white;
+    border-color: var(--info) transparent transparent var(--info);
+    border-width: 2px;
+    border-radius: 0.5rem 0 0 0;
+}
+
+#upBtn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: var(--info) transparent transparent var(--info);
+    color: var(--info-dark);
+
+}
+
+/* DETAIL */
+
+/* MODAL STYLES */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.modal-overlay::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.modal {
+    margin: 2rem 2rem auto 2rem;
+    background-color: var(--secondary-xlight);
+    max-width: 500px;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.modal:focus {
+    outline: none;
+}
+
+.closeDetailBtn {
+    position: fixed;
+    top: 1.7rem;
+    right: 1.7rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 352px) {
+    .closeDetailBtn {
+        right: 2vw;
+    }
+}
+
+@media (min-width: 578px) {
+    .closeDetailBtn {
+        position: absolute;
+        margin-top: -2rem;
+        margin-right: -2rem;
+    }
+}
+
+.closeDetailBtn:hover {
+    border: none;
+    background-color: var(--primary-dark);
+}
+
+/* PROFILE */
+
+.detail-container {
+    max-width: 600px;
+    min-width: 350px;
+}
+
+.gnome-data-wrapper,
+.gnome-professions-wrapper {
+    background-color: var(--secondary-xlight);
+}
+
+.gnome-data-container {
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.detail-img-wrapper {
+    min-width: 6rem;
+    width: 6rem;
+    height: 6rem;
+    min-height: 6rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-right: 1.5rem;
+}
+
+@media (max-width: 352px) {
+    .detail-img-wrapper {
+        margin-right: 0.5rem;
+    }
+}
+
+.gnome-name-container {
+    width: 100%;
+}
+
+.detail-firstName {
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    line-height: 1.4rem;
+}
+
+.detail-lastName {
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    font-family: var(--h-font);
+}
+
+.id {
+    font-size: 0.6rem;
+    text-align: end;
+}
+
+.gnome-appearance-wrapper,
+.gnome-friends-wrapper {
+    background-color: var(--secondary-light);
+}
+
+.gnome-appearance-container,
+.gnome-professions-container {
+    margin: 0.5rem 0.5rem 1rem 1rem;
+}
+
+.appearance-content-row {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 352px) {
+    .appearance-content-row {
+        font-size: 0.8rem;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+}
+
+.hair-color {
+    display: inline-block;
+    border-radius: 0.7rem;
+    padding: 0 0.3rem 0 0.3rem;
+    margin-left: 0.1rem;
+    margin-bottom: 0.1rem;
+    background-color: rgb(248, 138, 193);
+    color: white;
+    font-weight: 900;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.detail-professions {
+    font-size: 1rem;
+}
+
+.detail-professions span {
+    display: inline-block;
+    border-radius: 0.7rem;
+    padding: 0 0.3rem 0 0.3rem;
+    margin-left: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.gnome-friends-container {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+#h-friends {
+    margin-left: 0.5rem;
 }
