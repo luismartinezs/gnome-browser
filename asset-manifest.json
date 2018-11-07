@@ -1,13 +1,13 @@
 {
-  "main.css": "/gnome-browser/static/css/main.012fb623.chunk.css",
-  "main.js": "/gnome-browser/static/js/main.33aaac6d.chunk.js",
-  "main.js.map": "/gnome-browser/static/js/main.33aaac6d.chunk.js.map",
+  "main.css": "/gnome-browser/static/css/main.951e8127.chunk.css",
+  "main.js": "/gnome-browser/static/js/main.7aa0cc8f.chunk.js",
+  "main.js.map": "/gnome-browser/static/js/main.7aa0cc8f.chunk.js.map",
   "static/js/1.664f9acf.chunk.js": "/gnome-browser/static/js/1.664f9acf.chunk.js",
   "static/js/1.664f9acf.chunk.js.map": "/gnome-browser/static/js/1.664f9acf.chunk.js.map",
   "runtime~main.js": "/gnome-browser/static/js/runtime~main.dcef6e29.js",
   "runtime~main.js.map": "/gnome-browser/static/js/runtime~main.dcef6e29.js.map",
-  "static/css/main.012fb623.chunk.css.map": "/gnome-browser/static/css/main.012fb623.chunk.css.map",
+  "static/css/main.951e8127.chunk.css.map": "/gnome-browser/static/css/main.951e8127.chunk.css.map",
   "index.html": "/gnome-browser/index.html",
-  "precache-manifest.4eb275329b560e0f0bcea3d41f572d69.js": "/gnome-browser/precache-manifest.4eb275329b560e0f0bcea3d41f572d69.js",
+  "precache-manifest.b8b2d3a80ea065d45a4c0e2ebd69c519.js": "/gnome-browser/precache-manifest.b8b2d3a80ea065d45a4c0e2ebd69c519.js",
   "service-worker.js": "/gnome-browser/service-worker.js"
 }

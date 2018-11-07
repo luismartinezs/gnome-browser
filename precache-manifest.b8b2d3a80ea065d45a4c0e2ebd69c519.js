@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/gnome-browser/static/js/runtime~main.dcef6e29.js"
   },
   {
-    "revision": "33aaac6d2f2872e5022f",
-    "url": "/gnome-browser/static/js/main.33aaac6d.chunk.js"
+    "revision": "7aa0cc8f3b1a0269668a",
+    "url": "/gnome-browser/static/js/main.7aa0cc8f.chunk.js"
   },
   {
     "revision": "664f9acfeef08c305168",
     "url": "/gnome-browser/static/js/1.664f9acf.chunk.js"
   },
   {
-    "revision": "33aaac6d2f2872e5022f",
-    "url": "/gnome-browser/static/css/main.012fb623.chunk.css"
+    "revision": "7aa0cc8f3b1a0269668a",
+    "url": "/gnome-browser/static/css/main.951e8127.chunk.css"
   },
   {
-    "revision": "41dd1df9f43a4603172d9978bd19adfd",
+    "revision": "7b11aa9428c675fb59dac0bc1c39aed4",
     "url": "/gnome-browser/index.html"
   }
 ];
