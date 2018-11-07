@@ -291,6 +291,12 @@ button:hover {
     border: none;
 }
 
+@media (max-width: 360px) {
+    #basicSearchInput {
+        width: 95%;
+    }
+}
+
 .basicSearchCue {
     font-size: 0.8rem;
     margin: 0;
